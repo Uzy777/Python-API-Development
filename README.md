@@ -9,6 +9,7 @@
 
 # Setup the following on initial
 python -m venv venv
+
 source venv/bin/activate
 
 
