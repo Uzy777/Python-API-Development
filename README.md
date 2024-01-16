@@ -3,3 +3,18 @@
 
 
  Following this video course - https://www.youtube.com/watch?v=0sOvCWFmrtA
+
+
+
+
+# Setup the following on initial
+python -m venv venv
+source venv/bin/activate
+
+
+# Install the following packages
+pip install fastapi[all]
+
+
+# Useful Commands
+uvicorn main:app --reload
