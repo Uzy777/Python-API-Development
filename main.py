@@ -1,6 +1,19 @@
 from fastapi import FastAPI
+from fastapi.params import Body
+from pydantic import BaseModel
+from typing import Optional
 
 app = FastAPI()
+
+
+
+class Post(BaseModel):
+    title: str
+    content: str
+    published: bool = True
+    rating: Optional[int] = None
+
+
 
 
 @app.get("/")
@@ -12,3 +25,12 @@ def root():     # async - Needed when wanting to do something that takes time
 @app.get("/posts")
 def get_posts():
     return {"data": "This is your posts"}
+
+
+
+@app.post("/createposts")
+def create_posts(post: Post):
+    print(post)       # Can get a specific field using .
+    print(post.dict())      # Output as a dictionary
+    return {"data": post}
+# title str, content str
