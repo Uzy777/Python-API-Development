@@ -22,4 +22,4 @@ pip install fastapi[all]
 
 
 # Useful Commands
-uvicorn main:app --reload
+uvicorn app.main:app --reload
