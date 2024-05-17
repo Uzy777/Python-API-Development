@@ -56,5 +56,4 @@ pip install pgadmin4
 
 pgadmin4
 
-email:- admin@admin.com
-password:- password_here
+Details in here - https://ravinderfzk.medium.com/install-postgresql-and-pgadmin4-in-arch-linux-eb013b45540f
