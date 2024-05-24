@@ -21,6 +21,7 @@ source venv/bin/activate
 
 # Install the following packages
 pip install fastapi[all]
+pip install psycopg2
 
 
 # Useful Commands for Startup
