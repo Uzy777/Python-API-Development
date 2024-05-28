@@ -19,9 +19,10 @@ python -m venv venv
 source venv/bin/activate
 
 
-# Install the following packages
+# Install the following packages (PIP)
 pip install fastapi[all]
 pip install psycopg2
+pip install sqlalchemy
 
 
 # Useful Commands for Startup
