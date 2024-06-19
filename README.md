@@ -46,7 +46,7 @@ python --version
 
 # Pip Packages
 ```
-pip install fastapi[all] psycopg2 sqlalchemy pgadmin4
+pip install fastapi[all] psycopg2 sqlalchemy pgadmin4 passlib[bcrypt]
 ```
 
 
