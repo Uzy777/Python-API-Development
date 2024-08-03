@@ -15,6 +15,9 @@ sudo pacman -S --needed base-devel openssl zlib xz
 curl https://pyenv.run | bash
 ```
 
+
+# Bash Shell Setup
+
 ## add to .bashrc
 ```bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
@@ -35,11 +38,41 @@ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
 echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 ```
+
+
+# Fish Shell Setup
+
+## If you have Fish 3.2.0 or newer, execute this interactively:
+```bash
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
+```
+
+## Otherwise, execute the snippet below:
+```bash
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+```
+
+## add to ~/.config/fish/config.fish
+```bash
+pyenv init - | source
+```
+
+
+# Restart Shell
+```bash
+exec "$SHELL"
+```
+
+
+# Pyenv
 ```
 pyenv install 3.11.0
 pyenv local 3.11.0
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate   # bash
+. venv/bin/activate.fish   # fish
 python --version  
 ```
 
