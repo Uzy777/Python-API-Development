@@ -79,15 +79,16 @@ python --version
 
 # Pip Packages
 ```
-pip install fastapi[all] psycopg2 sqlalchemy pgadmin4 passlib[bcrypt]
+pip install fastapi[all] psycopg2 sqlalchemy pgadmin4 passlib[bcrypt] python-jose[cryptography]
 ```
 
 
 # Useful Commands for Startup
 ```
-uvicorn app.main:app --reload
-source venv/bin/activate
+source venv/bin/activate   # bash
+. venv/bin/activate.fish   # fish
 deactivate
+uvicorn app.main:app --reload
 pgadmin4
 ```
 
@@ -110,3 +111,7 @@ pgadmin4
 ```
 
 Details in here - https://ravinderfzk.medium.com/install-postgresql-and-pgadmin4-in-arch-linux-eb013b45540f
+
+
+admin@admin.com
+admin@123
