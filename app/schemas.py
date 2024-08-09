@@ -11,12 +11,6 @@ class PostBase(BaseModel):
 class PostCreate(PostBase):
     pass
 
-    
-class Post(PostBase):
-    id: int
-    created_at: datetime
-    owner_id: int
-
 
 class UserCreate(BaseModel):
     email: EmailStr
@@ -32,6 +26,13 @@ class UserOut(BaseModel):
 class UserLogin(BaseModel):
     email: EmailStr
     password: str
+    
+
+class Post(PostBase):
+    id: int
+    created_at: datetime
+    owner_id: int
+    owner: UserOut
 
 
 class Token(BaseModel):
