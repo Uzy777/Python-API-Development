@@ -77,9 +77,12 @@ python --version
 ```
 
 
-# Pip Packages
+# Pip Packages or Pip Install requirements.txt
 ```
 pip install fastapi[all] psycopg2 sqlalchemy pgadmin4 passlib[bcrypt] python-jose[cryptography] alembic
+```
+```
+pip install -r requirements.txt
 ```
 
 
