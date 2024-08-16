@@ -3,3 +3,5 @@ __pycache__/
 .env
 alembic/__pycache__/
 alembic/versions/__pycache__/
+docker-compose-dev.yml
+docker-compose-prod.yml
