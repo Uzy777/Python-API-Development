@@ -24,7 +24,7 @@ Following this course - [Python API Development](https://www.youtube.com/watch?v
 
 ## Require
 ```
-sudo pacman -S vscode postman postgresql pyenv
+sudo pacman -S vscode postman postgresql pyenv docker docker-compose
 ```
 
 
@@ -255,3 +255,23 @@ sudo ufw enable
 sudo ufw status
 ```
 
+## Docker Setup
+### 1. Start Docker Daemon:
+```
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
+```
+### 2. Add User to Docker Group:
+```
+sudo usermod -aG docker $USER
+newgrp docker
+```
+### 3. Run Docker Build:
+```
+sudo docker build -t fastapi .
+```
+### 4. Run Docker Compose:
+```bash
+docker-compose up -d
+# docker-compose down (Teardown docker build)
+```

@@ -1,0 +1,18 @@
+version: "3"
+services:
+  api:
+    build: .
+    ports:
+      - 8000:8000
+# --- Can use either env_file variable and specify path or use environemnt variable and hardcode --- #
+    env_file:
+      - ./.env
+    # environment:
+    #   - DATABASE_HOSTNAME=localhost
+    #   - DATABASE_PORT=5432
+    #   - DATABASE_PASSWORD=
+    #   - DATABASE_NAME=fastapi
+    #   - DATABASE_USERNAME=postgres
+    #   - SECRET_KEY=
+    #   - ALGORITHM=HS256
+    #   - ACCESS_TOKEN_EXPIRE_MINUTES=300
