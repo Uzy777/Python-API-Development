@@ -1,0 +1,35 @@
+version: '3.8'  # Specify the version, compatible with Docker Compose V2
+
+services:
+  api:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/usr/src/app:ro
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - ./.env
+    # Alternatively, you can use environment variables directly:
+    # environment:
+    #   DATABASE_HOSTNAME: localhost
+    #   DATABASE_PORT: "5432"
+    #   DATABASE_PASSWORD: ""
+    #   DATABASE_NAME: fastapi
+    #   DATABASE_USERNAME: postgres
+    #   SECRET_KEY: ""
+    #   ALGORITHM: HS256
+    #   ACCESS_TOKEN_EXPIRE_MINUTES: "300"
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ""
+      POSTGRES_DB: fastapi
+    volumes:
+      - postgres-db:/var/lib/postgresql/data  # Updated volume path
+
+volumes:
+  postgres-db:

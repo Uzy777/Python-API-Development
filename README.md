@@ -275,3 +275,11 @@ sudo docker build -t fastapi .
 docker-compose up -d
 # docker-compose down (Teardown docker build)
 ```
+
+### x. Docker Useful Commands:
+```
+docker ps
+docker exec -it {IMAGE NAME} bash
+docker-compose -f docker-compose-dev.yml up -d
+docker-compose -f docker-compose-dev.yml down
+```
