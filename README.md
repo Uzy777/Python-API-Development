@@ -98,7 +98,7 @@ python --version
 
 ## Pip Packages or Pip Install requirements.txt
 ```
-pip install fastapi[all] psycopg2 sqlalchemy pgadmin4 passlib[bcrypt] python-jose[cryptography] alembic
+pip install fastapi[all] psycopg2 sqlalchemy pgadmin4 passlib[bcrypt] python-jose[cryptography] alembic pytest
 ```
 ```
 pip install -r requirements.txt
@@ -282,4 +282,11 @@ docker ps
 docker exec -it {IMAGE NAME} bash
 docker-compose -f docker-compose-dev.yml up -d
 docker-compose -f docker-compose-dev.yml down
+```
+
+
+
+```
+pytest -v
+pytest --disable-warnings -v -x
 ```
