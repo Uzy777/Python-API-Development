@@ -13,9 +13,9 @@ from app.config import settings
 
 
 def test_create_user(client):
-    res = client.post("/users/", json={"email": "hello123@gmail.com", "password": "password123"})
+    res = client.post("/users/", json={"email": "carl@gmail.com", "password": "password123"})
     new_user = schemas.UserOut(**res.json())
-    assert new_user.email == "hello123@gmail.com"
+    assert new_user.email == "carl@gmail.com"
     assert res.status_code == 201
 
 
@@ -31,10 +31,10 @@ def test_login_user(test_user, client):
 
 @pytest.mark.parametrize("email, password, status_code", [
     ('wrongemail@gmail.com', 'password123', 403),
-    ('sanjeev@gmail.com', 'wrongpassword', 403),
+    ('carl@gmail.com', 'wrongpassword', 403),
     ('wrongemail@gmail.com', 'wrongpassword', 403),
     (None, 'password123', 422),
-    ('sanjeev@gmail.com', None, 422)
+    ('carl@gmail.com', None, 422)
 ])
 def test_incorrect_login(test_user, client, email, password, status_code):
     res = client.post("/login", data={"username": email, "password": password})
