@@ -64,6 +64,7 @@ jobs:
           password: ${{ secrets.PROD_PASSWORD }}
           # port: ${{ secrets.PROD_PORT }}
           script: |
+            echo "This is a test!"
             cd app/src
             git pull
             echo ${{ secrets.PROD_PASSWORD }} | sudo -S sudo systemctl restart api.service
