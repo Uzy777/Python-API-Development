@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]
     environment:
-      name: production
+      name: productio
     steps:
       - name: Deploying stuff
         run: echo "Going to deploy some stuff"
