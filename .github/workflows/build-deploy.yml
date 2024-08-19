@@ -57,12 +57,12 @@ jobs:
         run: echo "Going to deploy some stuff"
 
       - name: Deploy to Ubuntu Server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.PROD_HOST }}
           username: ${{ secrets.PROD_USERNAME }}
           password: ${{ secrets.PROD_PASSWORD }}
-          port: ${{ secrets.PROD_PORT }}
+          # port: ${{ secrets.PROD_PORT }}
           script: |
             cd app/src
             git pull
