@@ -65,7 +65,5 @@ jobs:
           # port: ${{ secrets.PROD_PORT }}
           script: |
             cd app/src
-          debug: true
-
-
-#
+            git pull
+            echo ${{ secrets.PROD_PASSWORD }} | sudo -S sudo systemctl restart api.service
