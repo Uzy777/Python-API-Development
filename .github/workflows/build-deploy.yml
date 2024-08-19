@@ -64,11 +64,11 @@ jobs:
           password: ${{ secrets.PROD_PASSWORD }}
           # port: ${{ secrets.PROD_PORT }}
           script: |
-            echo "${{ secrets.PROD_HOST}} > /home/ubuntu/test.txt"
+            echo "${{ secrets.PROD_HOST}}" > /home/ubuntu/test.txt
             cat /home/ubuntu/test.txt
             cd app/src
             git pull
-            echo "${{ secrets.PROD_PASSWORD }} | sudo -S sudo systemctl restart api.service"
+            echo "${{ secrets.PROD_PASSWORD }}" | sudo -S sudo systemctl restart api.service
           debug: true
 
 
