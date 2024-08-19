@@ -29,7 +29,7 @@ app.include_router(vote.router)
 
 @app.get("/")
 def root():     # async - Needed when wanting to do something that takes time
-    return {"message": "Hello World!"}
+    return {"message": "Hello World! Pushing to Server!"}
 
 
 
