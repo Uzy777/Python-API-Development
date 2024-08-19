@@ -288,5 +288,5 @@ docker-compose -f docker-compose-dev.yml down
 
 ```
 pytest -v
-pytest --disable-warnings -v -x
+pytest --disable-warnings -v
 ```
